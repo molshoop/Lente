@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/tourspel</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+      <mapping class="nl.gerete.mvc.AddressesEntity"/>
+      <mapping class="nl.gerete.mvc.CountriesEntity"/>
+      <mapping class="nl.gerete.mvc.EditionsEntity"/>
+      <mapping class="nl.gerete.mvc.EtappeResultsEntity"/>
+      <mapping class="nl.gerete.mvc.EtappesEntity"/>
+      <mapping class="nl.gerete.mvc.PersonrightsEntity"/>
+      <mapping class="nl.gerete.mvc.PersonsEntity"/>
+      <mapping class="nl.gerete.mvc.PlaylistEntity"/>
+      <mapping class="nl.gerete.mvc.PlaylistResultEntity"/>
+      <mapping class="nl.gerete.mvc.PlaylistentryEntity"/>
+      <mapping class="nl.gerete.mvc.RegionsEntity"/>
+      <mapping class="nl.gerete.mvc.RiderEntity"/>
+      <mapping class="nl.gerete.mvc.StoppedRiderEntity"/>
+      <mapping class="nl.gerete.mvc.SysMailMessagesEntity"/>
+      <mapping class="nl.gerete.mvc.SysMailRecipientsEntity"/>
+      <mapping class="nl.gerete.mvc.SysServerLocksEntity"/>
+      <mapping class="nl.gerete.mvc.TeamEntity"/>
+      <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
