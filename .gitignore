@@ -95,3 +95,6 @@ beheer/magick/testdata/*
 .sonar
 sonar-project.properties
 viewpoint/WebContent/applet
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/dataSources.*

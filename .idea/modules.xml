@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lente.iml" filepath="$PROJECT_DIR$/Lente.iml" />
+      <module fileurl="file://$PROJECT_DIR$/db-tourspel/db-tourspel.iml" filepath="$PROJECT_DIR$/db-tourspel/db-tourspel.iml" />
     </modules>
   </component>
 </project>
