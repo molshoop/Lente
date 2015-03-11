@@ -14,6 +14,7 @@
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
@@ -29,6 +30,10 @@
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.jboss:jandex:1.1.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:4.3.5.Final" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: postgresql:postgresql:9.0-801.jdbc4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
