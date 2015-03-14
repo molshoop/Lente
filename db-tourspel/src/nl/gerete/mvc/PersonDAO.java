@@ -9,5 +9,5 @@ public interface PersonDAO {
 
     public void save(PersonsEntity p);
 
-    public List<PersonsEntity> list();
+    public List<PersonsEntity> listPersons();
 }
