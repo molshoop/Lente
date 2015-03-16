@@ -6,7 +6,9 @@ import javax.persistence.*;
  * @author <a href="mailto:benshoe@gmail.com">Ben Schoen</a>
  * @since 3/2/15.
  */
-@Entity @Table(name = "persons", schema = "public", catalog = "tourspel") public class PersonsEntity {
+@Entity
+@Table(name = "persons", schema = "public", catalog = "tourspel")
+public class PersonsEntity {
 	private long m_id;
 
 	private String m_email;

@@ -11,26 +11,26 @@ import java.util.List;
  */
 public class PersonDAOImpl implements PersonDAO {
 
-    private SessionFactory m_sessionFactory;
+	private SessionFactory m_sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        m_sessionFactory = sessionFactory;
-    }
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		m_sessionFactory = sessionFactory;
+	}
 
-    @Override
-    public void save(PersonsEntity p) {
-        Session session = m_sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-        session.persist(p);
-        tx.commit();
-        session.close();
-    }
+	@Override
+	public void save(PersonsEntity p) {
+		Session session = m_sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.persist(p);
+		tx.commit();
+		session.close();
+	}
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<PersonsEntity> listPersons() {
-        Session session = m_sessionFactory.openSession();
-        List<PersonsEntity> personList = session.createQuery("from nl.gerete.mvc.PersonsEntity ").list();
-        session.close();
-        return personList;
-    }}
+	@Override
+	public List<PersonsEntity> listPersons() {
+		Session session = m_sessionFactory.openSession();
+		List<PersonsEntity> personList = session.createQuery("from nl.gerete.mvc.PersonsEntity ").list();
+		session.close();
+		return personList;
+	}
+}

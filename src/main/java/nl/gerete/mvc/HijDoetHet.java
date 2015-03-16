@@ -11,7 +11,7 @@ public class HijDoetHet {
 
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("mvc-dispatcher-servlet.xml");
 
         PersonDAO personDAO = context.getBean(PersonDAO.class);
 
@@ -24,7 +24,7 @@ public class HijDoetHet {
 
         System.out.println("Person::"+person);
 
-        List<PersonsEntity> list = personDAO.list();
+        List<PersonsEntity> list = personDAO.listPersons();
 
         for(PersonsEntity p : list){
             System.out.println("Person List::"+p.getFirstname()+ " "+ p.getLastname());
