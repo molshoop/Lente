@@ -8,4 +8,6 @@ import java.util.*;
  */
 public interface PersonService {
 	public List<PersonsEntity> listPersons();
+
+    public void deletePerson(Long id);
 }

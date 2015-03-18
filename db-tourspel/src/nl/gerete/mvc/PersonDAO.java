@@ -10,4 +10,6 @@ public interface PersonDAO {
     public void save(PersonsEntity p);
 
     public List<PersonsEntity> listPersons();
+
+    public void delete(Long id);
 }

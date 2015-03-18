@@ -33,4 +33,13 @@ public class PersonDAOImpl implements PersonDAO {
 		session.close();
 		return personList;
 	}
+
+    @Override
+    public void delete(Long id) {
+        Session session = m_sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        PersonsEntity person = (PersonsEntity) session.load(PersonsEntity.class, id);
+        session.delete(person);
+        tx.commit();
+    }
 }
