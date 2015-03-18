@@ -1,6 +1,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
@@ -15,8 +15,8 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql://localhost:5432/tourspel" />
-        <property name="username" value="postgres" />
-        <property name="password" value="pwrel" />
+        <property name="username" value="marc" />
+        <property name="password" value="tikanus" />
     </bean>
 
 
@@ -26,7 +26,6 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
-                <value>nl.gerete.mvc.PersonDAOImpl</value>
                 <value>nl.gerete.mvc.PersonsEntity</value>
             </list>
         </property>
@@ -34,7 +33,7 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.ProgressDialect</prop>
                 <prop key="hibernate.current_session_context_class">thread</prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
             </props>
         </property>
     </bean>
@@ -42,8 +41,5 @@
 
     <bean id="personDAO" class="nl.gerete.mvc.PersonDAOImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-    </bean>
-    <bean id="personService" class="nl.gerete.mvc.PersonServiceImpl">
-        <property name="personDAO" ref="personDAO" />
     </bean>
 </beans>
