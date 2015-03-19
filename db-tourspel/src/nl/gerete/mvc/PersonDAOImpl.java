@@ -40,6 +40,7 @@ public class PersonDAOImpl implements PersonDAO {
         Transaction tx = session.beginTransaction();
         PersonsEntity person = (PersonsEntity) session.load(PersonsEntity.class, id);
         session.delete(person);
+        session.close();
         tx.commit();
     }
 }
