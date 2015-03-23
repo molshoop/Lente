@@ -21,4 +21,10 @@ public class PersonServiceImpl implements PersonService {
 	public List<PersonsEntity> listPersons() {
 		return m_personDAO.listPersons();
 	}
+
+    @Override
+    public void deletePerson(Long id) {
+        System.out.println("Delete person = "+ id);
+        m_personDAO.delete(id);
+    }
 }

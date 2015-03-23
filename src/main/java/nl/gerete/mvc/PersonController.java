@@ -1,5 +1,6 @@
 package nl.gerete.mvc;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
@@ -26,4 +27,10 @@ public class PersonController {
 		model.addAttribute("listPersons", m_personService.listPersons());
 		return "person";
 	}
+
+    @RequestMapping(value = "/person/delete", method = RequestMethod.GET)
+    public String deletePerson(@RequestParam("id") Long id ) {
+        m_personService.deletePerson(id);
+        return "person";
+    }
 }

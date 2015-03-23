@@ -34,7 +34,7 @@
                 <td>${person.lastname}</td>
                 <td>${person.email}</td>
                 <td><a href="<c:url value='/edit/${person.id}' />" >Edit</a></td>
-                <td><a href="<c:url value='/remove/${person.id}' />" >Delete</a></td>
+                <td><a href="<c:url value='/person/delete?id=${person.id}' />" >Delete</a></td>
             </tr>
         </c:forEach>
     </table>
