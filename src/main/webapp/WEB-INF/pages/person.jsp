@@ -39,5 +39,6 @@
         </c:forEach>
     </table>
 </c:if>
+<a href="<c:url value='/person?new' />">Toevoegen</a>
 </body>
 </html>

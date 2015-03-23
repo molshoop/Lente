@@ -23,7 +23,10 @@ public class PersonsEntity {
 
 	private String m_prefix;
 
-	@Id @Column(name = "id", nullable = false, insertable = true, updatable = true) public long getId() {
+	@Id
+	@SequenceGenerator(name = "person_id_seq", sequenceName="person_id_seq", allocationSize=1, initialValue = 1001)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_id_seq")
+	@Column(name = "id", nullable = false, insertable = true, updatable = true) public long getId() {
 		return m_id;
 	}
 
