@@ -27,6 +27,15 @@ public class PersonDAOImpl implements PersonDAO {
 	}
 
 	@Override
+	public void edit(PersonsEntity p) {
+		Session session = m_sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(p);
+		tx.commit();
+		session.close();
+	}
+
+	@Override
 	public List<PersonsEntity> listPersons() {
 		Session session = m_sessionFactory.openSession();
 		List<PersonsEntity> personList = session.createQuery("from nl.gerete.mvc.PersonsEntity ").list();
@@ -43,4 +52,13 @@ public class PersonDAOImpl implements PersonDAO {
         tx.commit();
         session.close();
     }
+
+	@Override
+	public PersonsEntity getPersonById(Long id) {
+		Session session = m_sessionFactory.openSession();
+		PersonsEntity personsEntity = (PersonsEntity) session.load(PersonsEntity.class, id);
+		System.out.println("personsEntity = " + personsEntity.getLastname());
+		session.close();
+		return personsEntity;
+	}
 }

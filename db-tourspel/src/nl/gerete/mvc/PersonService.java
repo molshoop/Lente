@@ -12,4 +12,8 @@ public interface PersonService {
 	public List<PersonsEntity> listPersons();
 
     public void deletePerson(Long id);
+
+    public void editPerson(PersonsEntity p);
+
+    PersonsEntity getPersonById(Long id);
 }
