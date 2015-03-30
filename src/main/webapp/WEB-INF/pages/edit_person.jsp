@@ -20,7 +20,7 @@
 </head>
 <body>
 <div>
-    <h2>Edit Person Form</h2>
+    <h2>${person.firstname} ${person.lastname}</h2>
 
     <sf:form method="POST" modelAttribute="person" action="/person/modify">
         <form:hidden path="id"/>

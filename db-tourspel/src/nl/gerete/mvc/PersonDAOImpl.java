@@ -28,6 +28,9 @@ public class PersonDAOImpl implements PersonDAO {
 
 	@Override
 	public void edit(PersonsEntity p) {
+		//TODO Kunnen we hier iets met Transactional doen? Wat doet dat eigenlijk?
+		//TODO stylesheet aanmaken
+		//TODO Rennerslijst toevoegen
 		Session session = m_sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		session.update(p);
@@ -57,7 +60,7 @@ public class PersonDAOImpl implements PersonDAO {
 	public PersonsEntity getPersonById(Long id) {
 		Session session = m_sessionFactory.openSession();
 		PersonsEntity personsEntity = (PersonsEntity) session.load(PersonsEntity.class, id);
-		System.out.println("personsEntity = " + personsEntity.getLastname());
+		System.out.println("personsEntity = " + personsEntity.getLastname()); //FIXME Hibernate.initialize toepassen? Of Filter.. inbouwen
 		session.close();
 		return personsEntity;
 	}
