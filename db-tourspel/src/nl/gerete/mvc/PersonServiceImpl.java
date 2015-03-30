@@ -32,4 +32,15 @@ public class PersonServiceImpl implements PersonService {
         System.out.println("Delete person = "+ id);
         m_personDAO.delete(id);
     }
+
+    @Override
+    public void editPerson(PersonsEntity p) {
+        System.out.println("Edit the person with last name: " + p.getLastname());
+		m_personDAO.edit(p);
+    }
+
+	@Override
+	public PersonsEntity getPersonById(Long id) {
+		return m_personDAO.getPersonById(id);
+	}
 }

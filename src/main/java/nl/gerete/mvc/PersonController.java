@@ -26,7 +26,7 @@ public class PersonController {
 	}
 
 	@RequestMapping(value="/person", method=RequestMethod.GET)
-	public String showNewPersonForm(@RequestParam("new") String age, Map<String, Object> model){
+	public String showNewPersonForm(@RequestParam("new") String age, Map<String, Object> model) {
 		model.put("person", new PersonsEntity());
 		return "add_person";
 	}
@@ -50,6 +50,21 @@ public class PersonController {
     @RequestMapping(value = "/person/delete", method = RequestMethod.GET)
     public String deletePerson(@RequestParam("id") Long id ) {
         m_personService.deletePerson(id);
+		return "redirect:/" + PERSONS_PAGE;
+	}
+
+    @RequestMapping(value = "/person/edit", method = RequestMethod.GET)
+    public String showEditPersonForm(@RequestParam("id") Long id, Model model) {
+		model.addAttribute("person", m_personService.getPersonById(id));
+        return "edit_person";
+    }
+
+	@RequestMapping(value = "/person/modify", method = RequestMethod.POST)
+	public String editPersonFromForm(PersonsEntity person, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()) {
+			return "edit_person";
+		}
+		m_personService.editPerson(person);
 		return "redirect:/" + PERSONS_PAGE;
 	}
 }
