@@ -17,6 +17,11 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
+	public void savePerson(PersonsEntity p) {
+		m_personDAO.save(p);
+	}
+
+	@Override
 	@Transactional
 	public List<PersonsEntity> listPersons() {
 		return m_personDAO.listPersons();

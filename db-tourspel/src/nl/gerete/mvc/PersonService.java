@@ -7,6 +7,8 @@ import java.util.*;
  * @since 3/14/15.
  */
 public interface PersonService {
+	public void savePerson(PersonsEntity p);
+
 	public List<PersonsEntity> listPersons();
 
     public void deletePerson(Long id);
